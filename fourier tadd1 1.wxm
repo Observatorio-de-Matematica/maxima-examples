@@ -1,0 +1,55 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 22.04.0 ] */
+/* [wxMaxima: comment start ]
+Fourier series for f(t) for (t + 1 (-1 <= t <= 0), 1 (0 < t < 1))
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: comment start ]
+Funtion/s f(t):
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f(t):=t+1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+f[0](t):=1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+A0 constant
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+A[0]:3/4;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Sum function
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+F(t,n):=(((1-((-1)^n))/((n*%pi)^2)))*(cos(n*%pi*t))-(((-1)^n)/((n*%pi)))*(sin(n*%pi*t));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+Plot f(t), F(t) n=5 and F(t) n=10 against t
+   [wxMaxima: comment end   ] */
+
+
+/* [wxMaxima: input   start ] */
+plot2d([f(t), f[0](t), A[0]+F(t,1)+F(t,2)+F(t,3)+F(t,4)+F(t,5), A[0]+F(t,1)+F(t,2)+F(t,3)+F(t,4)+F(t,5)+F(t,6)+F(t,7)+F(t,8)+F(t,9)+F(t,10)],[t,-1.2,1.2],[legend,"f(t) part 1","f(t) part2","F(t) n=5","F(t) n=10"],[color,green, green, orange, red]);
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 22.04.0"$
